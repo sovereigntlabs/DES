@@ -145,7 +145,6 @@ contract DecentralizedEmploymentSystem is ERC721, IERC5192 {
     }
 
     // Override transfer functions to prevent transfer if locked
-    // Override transfer functions to prevent transfer if locked
     function _update(
         address to,
         uint256 tokenId,
@@ -180,7 +179,6 @@ contract DecentralizedEmploymentSystem is ERC721, IERC5192 {
         emit CompanyRegistered(companyId, msg.sender, name, industry);
     }
 
-    // Modify mintEmployeeToken to lock the token after minting
     function mintEmployeeToken(
         uint256 companyId,
         address employee,
@@ -208,30 +206,6 @@ contract DecentralizedEmploymentSystem is ERC721, IERC5192 {
         emit EmployeeTokenMinted(tokenId, employee);
     }
 
-    // Optional: Add functions to lock/unlock tokens if needed
-    function lockToken(uint256 tokenId) internal {
-        require(
-            ownerOf(tokenId) != address(0),
-            "ERC5192: Lock of nonexistent token"
-        );
-        require(!_locked[tokenId], "ERC5192: Token is already locked");
-
-        _locked[tokenId] = true;
-        emit Locked(tokenId);
-    }
-
-    function unlockToken(uint256 tokenId) internal {
-        require(
-            ownerOf(tokenId) != address(0),
-            "ERC5192: Unlock of nonexistent token"
-        );
-        require(_locked[tokenId], "ERC5192: Token is not locked");
-
-        _locked[tokenId] = false;
-        emit Unlocked(tokenId);
-    }
-
-    // Contract Management Functions
     function createContract(
         uint256 companyId,
         uint256 employeeTokenId,
