@@ -1,7 +1,7 @@
 # Decentralized Employment System (DES) Smart Contract 🌐
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-[![Solidity](https://img.shields.io/badge/Solidity-%5E0.8.0-blue)](https://soliditylang.org/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Solidity](https://img.shields.io/badge/Solidity-%5E0.8.0-blue)](https://soliditylang.org/)
 [![OpenZeppelin](https://img.shields.io/badge/OpenZeppelin-latest-brightgreen)](https://www.openzeppelin.com/)
 
 A blockchain-based employment management system implementing [EIP-7750](https://eips.ethereum.org/EIPS/eip-7750), [EIP-5192](https://eips.ethereum.org/EIPS/eip-5192) (Minimal Soulbound Tokens), and [EIP-721](https://eips.ethereum.org/EIPS/eip-721) standards for secure, transparent employment relationships.
@@ -26,6 +26,7 @@ A blockchain-based employment management system implementing [EIP-7750](https://
 The Decentralized Employment System (DES) is a smart contract solution that revolutionizes traditional employment relationships using blockchain technology. It implements soulbound NFTs for employee credentials, secure contract management, and transparent review systems.
 
 ### Key Components:
+
 - **Employee Token Management**: Built on [EIP-721](https://eips.ethereum.org/EIPS/eip-721) and [EIP-5192](https://eips.ethereum.org/EIPS/eip-5192) standards for non-transferable NFTs.
 - **Company Registration System**: Decentralized company profiles.
 - **Smart Employment Contracts**: Agreements between companies and employees.
@@ -49,6 +50,7 @@ The Decentralized Employment System (DES) is a smart contract solution that revo
 ## Technical Implementation
 
 ### Standards Implemented
+
 - [EIP-7750](https://eips.ethereum.org/EIPS/eip-7750): Enhanced Employment Token Standard.
 - [EIP-5192](https://eips.ethereum.org/EIPS/eip-5192): Minimal Soulbound Token Implementation.
 - [EIP-721](https://eips.ethereum.org/EIPS/eip-721): NFT Standard.
@@ -95,20 +97,34 @@ struct Review {
 ```
 
 ## Getting Started
+
 ### Prerequisites
+
 - Node.js >= 14.0.0
-- Hardhat or Truffle
+- Hardhat or Foundry
 - OpenZeppelin Contracts
 
 ### Installation
-```
-npm install @openzeppelin/contracts
-```
+
+Refer to README.md in the respective Foundry/Hardhat folders
+
 ### Deployment
+
+For Hardhat
+
 ```
-npx hardhat run scripts/deploy.js --network <your-network>
+npx hardhat run scripts/DES.js --network <your-network>
+
 ```
+
+For Foundry
+
+```
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
 ## Usage
+
 ### Company Registration
 
 ```
@@ -116,7 +132,9 @@ function registerCompany(string calldata name, string calldata industry)
     external
     returns (uint256 companyId)
 ```
+
 ### Employee Token Minting
+
 ```
 function mintEmployeeToken(
     uint256 companyId,
@@ -124,7 +142,9 @@ function mintEmployeeToken(
     string calldata metadataURI
 )
 ```
+
 ### Employment Contract Creation
+
 ```
 function createContract(
     uint256 companyId,
@@ -134,7 +154,9 @@ function createContract(
     // ... additional parameters
 )
 ```
+
 ## Contributing
+
 We welcome contributions! Here's how you can help:
 
 1. Fork the repository.
@@ -144,6 +166,7 @@ We welcome contributions! Here's how you can help:
 5. Open a Pull Request.
 
 ## Areas for Improvement
+
 - Enhanced dispute resolution mechanisms.
 - Additional employment contract templates.
 - Integration with decentralized identity solutions.
@@ -154,18 +177,24 @@ We welcome contributions! Here's how you can help:
 - Enhanced privacy features.
 
 ## Security
+
 ### Audit Status
+
 - Initial audit pending.
 - Bug bounty program coming soon.
+
 ### Known Considerations
+
 - Locked token implementation.
 - Payment system security.
 - Arbitrator authority limits.
 
 ## License
+
 This project is licensed under the MIT License
 
 ## Keywords
+
 decentralized employment, blockchain HR, soulbound tokens, EIP-5192, EIP-721, smart contracts, employment NFT, Web3 jobs, blockchain employment, decentralized hiring.
 
 ## 📫 Contact
